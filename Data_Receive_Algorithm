@@ -1,0 +1,33 @@
+// Data reciving code
+
+int LDR_Pin = A0; 
+
+void setup(){
+  
+  Serial.begin(9600);
+}
+
+void loop(){
+  int LDRReading = analogRead(LDR_Pin); 
+
+  Serial.println(LDRReading);
+  
+  
+ if(LDRReading < 690)
+ {
+  delay(1000);
+  
+    if(LDRReading < 490)
+ {
+   Serial.println("1");
+   
+ }
+ else {   Serial.println("0");
+ }
+ 
+ }
+ 
+  delay(250); 
+  
+  
+}
